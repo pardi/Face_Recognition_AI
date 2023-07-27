@@ -3,12 +3,12 @@ import torch
 import matplotlib.pyplot as plt
 
 
-def denormalize(images):
+def denormalize(images: np.ndarray) -> np.ndarray:
     """Transform images from [-1.0, 1.0] to [0, 255] and cast them to uint8."""
     return ((images + 1.) / 2. * 255).astype(np.uint8)
 
 
-def display(fixed_latent_vector: torch.Tensor):
+def display(fixed_latent_vector: torch.Tensor) -> None:
     """ Helper function to display images during training """
     fig = plt.figure(figsize=(14, 4))
     plot_size = 16
